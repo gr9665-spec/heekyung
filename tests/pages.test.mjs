@@ -39,6 +39,19 @@ test('no placeholders shipped', () => {
   }
 });
 
+test('index sections follow spec order', () => {
+  const html = read('index.html');
+  const ids = ['check', 'support', 'reviews', 'news', 'contact'].map(id => html.indexOf(`id="${id}"`));
+  assert.ok(ids.every(i => i > 0), `missing section: ${ids}`);
+  assert.deepEqual([...ids].sort((a, b) => a - b), ids);
+});
+
+test('all pages exist', () => {
+  for (const p of ['index.html', 'about.html', 'courses.html', 'reviews.html', 'privacy.html']) {
+    assert.ok(pages.includes(p), p);
+  }
+});
+
 test('no hotlinked images', () => {
   const files = [...pages, 'css/style.css'];
   for (const f of files) {
