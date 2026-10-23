@@ -200,9 +200,9 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .page-head{color:#fff;padding:160px 0 72px;background:linear-gradient(90deg,rgba(9,16,28,.95),rgba(9,16,28,.82)),url('../img/desk.jpg') center/cover}
 .page-head h1{font-size:44px;font-weight:800;letter-spacing:-.05em;line-height:1.25;margin-top:12px}
 .page-head p{color:rgba(255,255,255,.72);margin-top:14px;font-size:17px;max-width:40em;line-height:1.8}
-.about-grid{display:grid;grid-template-columns:420px 1fr;gap:72px;align-items:start}
-.about-grid .ph{position:relative}
-.about-grid .ph img{border-radius:6px;aspect-ratio:1/1;object-fit:cover}
+.about-grid{display:grid;grid-template-columns:260px 1fr;gap:64px;align-items:start}
+.about-grid .ph{position:sticky;top:110px}
+.about-grid .ph img{width:100%;height:auto;border-radius:6px;aspect-ratio:4/5;object-fit:cover}
 .about-grid .ph figcaption{margin-top:12px;font-size:13px;color:var(--muted2)}
 .about-grid h2{font-size:30px;font-weight:800;letter-spacing:-.045em;line-height:1.35}
 .about-grid .body p{font-size:17px;line-height:1.9;color:#3b382f;margin-top:18px}
@@ -311,6 +311,7 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
   .page-head{padding:110px 0 44px}
   .page-head h1{font-size:30px}
   .about-grid{grid-template-columns:1fr;gap:32px}
+  .about-grid .ph{position:static;max-width:200px}
   .about-grid h2{font-size:24px}
   .tbl{font-size:14px}
   .tbl th,.tbl td{padding:12px 8px}
