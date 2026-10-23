@@ -1,0 +1,38 @@
+# 학점은행제 희경쌤 사이트
+
+정적 HTML 사이트 (GitHub Pages). 설계: `../heekyung_site_mockups/DESIGN.md`, 계획: `../heekyung_site_mockups/PLAN.md`
+
+## 로컬 미리보기 · 테스트
+
+- 미리보기: 상위 폴더 `.claude/launch.json`의 `heekyung_site` (python http.server 8766)
+- 테스트: `npm test` (Node 24 `node:test`)
+
+## 1. 연락처·채널 (`js/config.js`)
+
+전화·카톡 ID·네이버폼, 유튜브/인스타/블로그 URL을 여기서만 바꿉니다. URL이 `null`이면 해당 버튼이 자동으로 숨겨집니다.
+
+## 2. 상담 접수 EmailJS
+
+`js/config.js`의 `EMAILJS`에 희경쌤 계정의 public key / service ID / template ID를 넣습니다. 비어 있으면 접수 대신 "카카오톡 ZMZM65로 문의" 안내가 뜹니다.
+
+EmailJS 템플릿에서 쓸 변수:
+
+| 변수 | 내용 |
+|---|---|
+| `{{name}}` | 이름 |
+| `{{phone}}` | 연락처 (010-0000-0000 형태로 정리됨) |
+| `{{interest}}` | 관심 분야 |
+| `{{diag_edu}}` `{{diag_goal}}` `{{diag_cert}}` | 간이 진단에서 고른 학력·목표·자격증 (안 했으면 빈칸) |
+| `{{diag_result}}` | 진단 결과 한 줄 |
+| `{{page}}` | 접수한 페이지 |
+| `{{sent_at}}` | 접수 시각 (KST) |
+
+받는 메일 = 템플릿의 To Email. 휴대폰 Gmail 앱 알림을 켜두면 바로 알림이 옵니다.
+
+## 3. 진단 문구 (`data/diagnosis-table.js`)
+
+학력 × 목표별 "가능성 + 기간 한 줄". 과목·학점 내역은 넣지 않습니다(테스트가 '학점' 단어를 막음). 과정 안내 표도 이 파일에서 만들어집니다.
+
+## 4. 캐시
+
+CSS 링크의 `?v=N`을 수정할 때마다 올립니다. JS 모듈은 쿼리 없이 불러옵니다(쿼리를 붙이면 같은 모듈이 두 번 실행됨).
