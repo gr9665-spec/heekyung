@@ -212,13 +212,15 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .steps p{font-size:15px!important;margin-top:4px!important;color:var(--muted)!important}
 .ch-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
 .ch-links a{border:1px solid var(--line);padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600}
-.tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:40px;overflow-x:auto}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:40px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
 .tabs a{padding:16px 26px;font-size:16px;font-weight:600;color:var(--muted2);border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap}
 .tabs a[aria-selected=true]{color:var(--ink);border-color:var(--ink)}
 .panel h2{font-size:30px;font-weight:800;letter-spacing:-.045em}
 .panel > p{font-size:16px;color:var(--muted);margin-top:10px;line-height:1.8;max-width:44em}
 .panel h3{font-size:18px;font-weight:700;margin:36px 0 12px}
-.tbl{width:100%;border-collapse:collapse;margin-top:28px;font-size:15px}
+.tbl{width:100%;border-collapse:collapse;margin-top:28px;font-size:15px;table-layout:fixed}
+.tbl th:nth-child(1){width:28%}.tbl th:nth-child(2){width:30%}
+.panel h3 + .tbl{margin-top:8px}
 .tbl th,.tbl td{padding:16px 14px;border-bottom:1px solid var(--line);text-align:left}
 .tbl thead th{border-bottom:2px solid var(--ink);font-size:13px;color:var(--muted2);font-weight:600}
 .tbl td:first-child{font-weight:600;white-space:nowrap}
