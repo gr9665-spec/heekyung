@@ -124,7 +124,8 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .stats b.txt{font-size:24px;line-height:1.4;letter-spacing:-.04em;margin-top:18px}
 .stats p{font-size:14px;color:var(--muted);margin-top:10px}
 .stats p.ch{display:flex;gap:6px;flex-wrap:wrap}
-.stats p.ch a{font-size:13px;font-weight:600;padding:4px 10px;border:1px solid #d6cfbd;border-radius:999px;background:#fff}
+.stats p.ch a{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;padding:4px 11px 4px 8px;border:1px solid #d6cfbd;border-radius:999px;background:#fff;color:var(--ink)}
+.stats p.ch svg{width:15px;height:15px;flex:none}
 .stats p.ch a:hover{border-color:var(--ink)}
 
 /* ── 간이 진단 ── */
