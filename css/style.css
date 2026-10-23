@@ -303,8 +303,8 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
   .news-list a:first-child{grid-row:auto}
   .news-list a:first-child img{aspect-ratio:16/10}
   .contact .wrap{grid-template-columns:auto 1fr;gap:18px;padding-top:44px;padding-bottom:44px}
-  .contact .acts{grid-column:1/-1}
-  .contact .acts .btn{flex:1}
+  .contact .acts{grid-column:1/-1;flex-direction:column}
+  .contact .acts .btn{width:100%}
   .contact h2{font-size:22px}
   .contact img{width:72px;height:72px}
   .page-head{padding:110px 0 44px}
