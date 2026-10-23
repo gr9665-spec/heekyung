@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>학점은행제 희경쌤 | 학위·자격증·편입 1:1 상담</title>
+<meta name="description" content="학점은행제 상담 8년. 지금 내 학력으로 학위·자격증·편입·대학원이 가능한지, 얼마나 걸리는지 희경쌤이 직접 알려드립니다.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html"><b>학점은행제 희경쌤</b></a>
+    <nav aria-label="주요 메뉴">
+      <ul>
+        <li><a href="about.html">희경쌤 소개</a></li>
+        <li><a href="courses.html">과정 안내</a></li>
+        <li data-needs-reviews><a href="reviews.html">합격 후기</a></li>
+        <li><a href="index.html#news">교육정보</a></li>
+        <li class="m-only"><a href="index.html#apply" data-apply>1:1 상담 신청</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="index.html#apply" data-apply>1:1 상담 신청</a>
+    <button class="menu-btn" aria-label="메뉴 열기" aria-expanded="false"><i></i></button>
+  </div>
+</header>
+
+<aside class="quick" aria-label="빠른 연락">
+  <a href="#" data-kakao><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.4.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>카톡상담</a>
+  <a href="#" data-channel="youtube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="#ff0000"/><path d="M10 9v6l5-3z" fill="#fff"/></svg>유튜브</a>
+  <a href="#" data-channel="instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#c13584" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#c13584"/></svg>인스타</a>
+  <a href="#" data-channel="blog"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#03c75a"/><path d="M8 7h2.6l3.4 5.2V7H16v10h-2.6L10 11.8V17H8z" fill="#fff"/></svg>블로그</a>
+</aside>
+
+<main>
+<section class="hero">
+  <div class="inner">
+    <div>
+      <p class="lab on-dark">학위 · 자격증 · 편입</p>
+      <h1>빨리 끝내는 법보다<br><span>헛걸음 안 하는 법.</span></h1>
+      <p class="lead">필요 없는 과목을 듣거나, 지원 자격을 잘못 알고 한 학기를 날리는 경우를 8년 동안 수없이 봤습니다. 그래서 상담은 늘 “지금 가진 것”을 확인하는 데서 시작합니다.</p>
+      <div class="btns">
+        <a class="btn btn-white" href="#check">내 경우 확인하기 →</a>
+        <a class="btn btn-line" href="reviews.html" data-needs-reviews>합격 후기 보기</a>
+      </div>
+    </div>
+    <aside>
+      <p class="en serif">Years of one field</p>
+      <div class="big">8<small>년</small></div>
+      <p>학점은행제 상담 한 분야만.<br>유튜브 · 인스타그램 · 블로그에서 바뀐 제도와 실제 사례를 정리합니다.</p>
+      <p class="q" data-needs-reviews data-hero-quote></p>
+    </aside>
+  </div>
+
+  <div class="consult-bar" id="apply">
+    <form id="consult-form" novalidate>
+      <div class="sheet-head"><b>무료 상담 신청</b><button type="button" data-sheet-close aria-label="닫기">×</button></div>
+      <p class="t">무료 상담 신청<small>확인 후 희경쌤이 직접 연락드려요</small></p>
+      <label class="f">이름<input type="text" name="name" required maxlength="20" autocomplete="name" placeholder="이름"></label>
+      <label class="f">연락처<input type="tel" name="phone" required inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000"></label>
+      <label class="f">관심 분야<select name="interest" required>
+        <option value="">선택</option><option>학위</option><option>자격증</option><option>편입</option><option>대학원</option><option>기타</option>
+      </select></label>
+      <label class="agree"><input type="checkbox" name="agree" required> <a href="privacy.html" target="_blank">개인정보 수집·이용</a> 동의</label>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="diag_edu"><input type="hidden" name="diag_goal"><input type="hidden" name="diag_cert"><input type="hidden" name="diag_result">
+      <span class="diag-note" hidden></span>
+      <button type="submit">상담 접수</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="stats" aria-label="희경쌤 요약">
+  <div class="wrap">
+    <div><small>상담 경력</small><b>8년</b><em>학점은행제 한 분야</em></div>
+    <div data-needs-reviews><small>공개된 합격 후기</small><b data-review-count></b><em>캡처 원본 그대로</em></div>
+    <div><small>운영 채널</small><b>3곳</b><em>유튜브 · 인스타 · 블로그</em></div>
+    <div><small>상담 분야</small><b>학위·자격·편입</b><em>대학원 진학까지</em></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <b>학점은행제 희경쌤</b>
+      상담 담당 희경쌤 · 전화 010-2100-0321 · 카카오톡 ID ZMZM65<br>
+      에듀솔루션 · 사업자등록번호 418-09-09355 · 통신판매 신고면제 · 서울시 성북구 종암로
+      <p class="copy">© 에듀솔루션. All rights reserved.</p>
+    </div>
+    <div><a href="privacy.html">개인정보 처리방침</a></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="모바일 빠른 연락">
+  <a href="tel:01021000321"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>전화</a>
+  <a href="#" class="k" data-kakao>카톡상담</a>
+  <a href="index.html#apply" class="go" data-apply>무료 상담 신청</a>
+</nav>
+
+<script type="module" src="js/site.js?v=1"></script>
+</body>
+</html>
