@@ -28,18 +28,18 @@ export const TABLE = {
   },
   cert: {
     sw: {
-      hs:        same('high', '보통 8개월~1년'),
-      jc_drop:   same('high', '보통 8개월~1년'),
-      jc_grad:   same('high', '보통 8개월'),
-      univ_drop: same('high', '보통 8개월'),
-      univ_grad: same('high', '보통 8개월'),
+      hs:        same('high', '보통 1년 안팎'),
+      jc_drop:   same('high', '보통 1년 안팎'),
+      jc_grad:   same('high', '보통 1년 안팎'),
+      univ_drop: same('high', '보통 1년 안팎'),
+      univ_grad: same('high', '보통 1년 안팎'),
     },
     childcare: {
-      hs:        same('high', '보통 8개월~1년 (실습 별도)'),
-      jc_drop:   same('high', '보통 8개월~1년 (실습 별도)'),
-      jc_grad:   same('high', '보통 8개월 (실습 별도)'),
-      univ_drop: same('high', '보통 8개월 (실습 별도)'),
-      univ_grad: same('high', '보통 8개월 (실습 별도)'),
+      hs:        same('high', '보통 1년 안팎 (실습 별도)'),
+      jc_drop:   same('high', '보통 1년 안팎 (실습 별도)'),
+      jc_grad:   same('high', '보통 1년 안팎 (실습 별도)'),
+      univ_drop: same('high', '보통 1년 안팎 (실습 별도)'),
+      univ_grad: same('high', '보통 1년 안팎 (실습 별도)'),
     },
     sanup: {
       hs:        same('high', '보통 4개월'),
@@ -51,7 +51,7 @@ export const TABLE = {
     gisa: {
       hs:        same('high', '보통 1년'),
       jc_drop:   same('high', '보통 1년 안팎'),
-      jc_grad:   same('high', '보통 8개월~1년'),
+      jc_grad:   same('high', '보통 4~8개월'),
       univ_drop: same('check', '학과에 따라 바로~1년'),
       univ_grad: same('check', '학과에 따라 바로~4개월'),
     },

@@ -57,6 +57,17 @@ test('no credit details or hype in copy', () => {
   }
 });
 
+test('희경쌤 검수: 사회복지사·보육교사 17과목은 보통 3학기(1년 안팎)', () => {
+  for (const e of Object.keys(EDU)) {
+    assert.match(diagnose(e, 'cert', 'sw').period, /^보통 1년 안팎$/);
+    assert.match(diagnose(e, 'cert', 'childcare').period, /^보통 1년 안팎 \(실습 별도\)$/);
+  }
+});
+
+test('희경쌤 검수: 전문대 졸업 → 기사 4~8개월', () => {
+  assert.equal(diagnose('jc_grad', 'cert', 'gisa').period, '보통 4~8개월');
+});
+
 test('unknown input → ask', () => {
   assert.equal(diagnose('x', 'degree').level, 'ask');
 });
