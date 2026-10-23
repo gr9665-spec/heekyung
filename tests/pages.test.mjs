@@ -52,6 +52,16 @@ test('all pages exist', () => {
   }
 });
 
+test('privacy policy discloses overseas transfer', () => {
+  const html = read('privacy.html');
+  for (const s of ['국외 이전', '이전 국가', 'EmailJS']) assert.ok(html.includes(s), s);
+});
+
+test('consent notice near the form states item, purpose, period, right to refuse', () => {
+  const form = read('index.html').match(/<form id="consult-form"[\s\S]*?<\/form>/)[0];
+  for (const s of ['이름·연락처', '상담 연락', '1년', '거부']) assert.ok(form.includes(s), s);
+});
+
 test('no hotlinked images', () => {
   const files = [...pages, 'css/style.css'];
   for (const f of files) {

@@ -16,6 +16,15 @@ test('normalizePhone rejects junk', () => {
   assert.equal(normalizePhone('02-123-4567'), null);
 });
 
+test('normalizePhone rejects letters mixed in', () => {
+  assert.equal(normalizePhone('010-1234-5678abc'), null);
+  assert.equal(normalizePhone('010-1234-567o'), null);
+});
+
+test('normalizePhone requires 11 digits for 010', () => {
+  assert.equal(normalizePhone('0101234567'), null);
+});
+
 const base = { name: ' 김학생 ', phone: '01012345678', interest: '편입', page: 'index' };
 const at = new Date('2026-10-23T03:05:00Z');
 

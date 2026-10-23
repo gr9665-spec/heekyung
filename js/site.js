@@ -78,6 +78,10 @@ function init() {
     const open = document.body.classList.toggle('menu-open');
     menuBtn.setAttribute('aria-expanded', String(open));
   });
+  document.querySelectorAll('.top nav a').forEach(a => a.addEventListener('click', () => {
+    document.body.classList.remove('menu-open');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+  }));
 
   if (location.hash === '#apply') openConsult();
 }

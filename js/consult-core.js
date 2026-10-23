@@ -2,8 +2,10 @@
 import { GOALS } from './diagnosis.js';
 
 export function normalizePhone(s) {
-  const d = String(s ?? '').replace(/\D/g, '');
-  if (!/^01[016789]\d{7,8}$/.test(d)) return null;
+  const raw = String(s ?? '').trim();
+  if (!/^[\d\s-]+$/.test(raw)) return null;
+  const d = raw.replace(/\D/g, '');
+  if (!/^(010\d{8}|01[16789]\d{7,8})$/.test(d)) return null;
   return d.length === 11
     ? `${d.slice(0, 3)}-${d.slice(3, 7)}-${d.slice(7)}`
     : `${d.slice(0, 3)}-${d.slice(3, 6)}-${d.slice(6)}`;

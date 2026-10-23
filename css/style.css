@@ -101,6 +101,7 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .consult-bar .diag-note,.consult-bar .form-status{flex-basis:100%;order:99;margin-top:-4px}
 .consult-bar .form-status:empty{display:none}
 .consult-bar .diag-note{font-size:12px;color:var(--gold)}
+.consult-bar .consent{flex-basis:100%;order:98;margin-top:-6px;font-size:11px;line-height:1.5;color:rgba(255,255,255,.5)}
 .consult-bar .sheet-head{display:none}
 .form-status{font-size:13px;min-height:0}
 .form-status.ok{color:#9be3b4}.form-status.error{color:#ffb4a8}
