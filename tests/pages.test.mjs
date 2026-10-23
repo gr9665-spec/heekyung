@@ -62,6 +62,10 @@ test('consent notice near the form states item, purpose, period, right to refuse
   for (const s of ['이름·연락처', '상담 연락', '1년', '거부']) assert.ok(form.includes(s), s);
 });
 
+test('consult buttons use the in-page form, not naver form', () => {
+  for (const p of pages) assert.ok(!read(p).includes('form.naver.com'), p);
+});
+
 test('no hotlinked images', () => {
   const files = [...pages, 'css/style.css'];
   for (const f of files) {

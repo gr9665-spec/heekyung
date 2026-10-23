@@ -2,7 +2,6 @@
 export const CONTACT = {
   phone: '010-2100-0321',
   kakaoId: 'ZMZM65',
-  naverForm: 'https://form.naver.com/response/EUE4Y9dshzn',
 };
 
 // 주소를 받기 전에는 null → 해당 버튼이 숨겨짐
