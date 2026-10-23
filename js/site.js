@@ -1,5 +1,6 @@
 // 공통 UI: 채널 버튼, 모바일 메뉴, 상담 시트, 카톡 ID 복사
 import { CONTACT, CHANNELS } from './config.js';
+import { initReviews } from './reviews.js';
 
 export function hideMissingChannels(root = document) {
   root.querySelectorAll('[data-channel]').forEach(el => {
@@ -59,6 +60,7 @@ async function copyKakao() {
 
 function init() {
   hideMissingChannels();
+  initReviews();
 
   document.querySelectorAll('[data-kakao]').forEach(el =>
     el.addEventListener('click', e => { e.preventDefault(); copyKakao(); }));
