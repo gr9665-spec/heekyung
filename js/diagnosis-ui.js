@@ -16,6 +16,14 @@ if (box) {
   certSet.querySelector('.chips').innerHTML = chips('cert', CERTS);
 
   const val = n => form.querySelector(`input[name="${n}"]:checked`)?.value;
+  const pick = (n, v) => { form.querySelector(`input[name="${n}"][value="${v}"]`).checked = true; };
+
+  // 빈 화면에 보여줄 "자주 받는 질문" (학력, 목표, 자격증, 질문)
+  const EXAMPLES = [
+    ['hs', 'transfer', null, '고졸인데 4년제 편입이 될까요?'],
+    ['univ_grad', 'cert', 'sw', '대학 졸업했는데 사회복지사 2급은 얼마나 걸려요?'],
+    ['jc_grad', 'grad', null, '전문대 졸업인데 대학원 갈 수 있나요?'],
+  ];
 
   const setHidden = (edu, goal, cert, text) => {
     if (!consult) return;
@@ -34,8 +42,27 @@ if (box) {
     if (goal !== 'cert') certSet.querySelectorAll('input').forEach(i => { i.checked = false; });
     const cert = val('cert');
 
+    if (!edu && !goal) {
+      out.innerHTML = `
+        <p class="lab on-dark">가장 많이 받는 질문</p>
+        <p class="ex-title">눌러서 바로 확인해 보세요</p>
+        <div class="examples">${EXAMPLES.map(([e, g, c, q], i) =>
+          `<button type="button" data-ex="${i}"><span>“${q}”</span><em>${EDU[e]} · ${c ? CERTS[c] : GOALS[g]}</em></button>`).join('')}</div>
+        <p class="ex-hint">또는 왼쪽에서 최종학력과 목표를 골라 주세요.</p>`;
+      out.querySelectorAll('[data-ex]').forEach(b => b.addEventListener('click', () => {
+        const [e, g, c] = EXAMPLES[b.dataset.ex];
+        pick('edu', e); pick('goal', g); if (c) { certSet.hidden = false; pick('cert', c); }
+        render();
+      }));
+      setHidden();
+      return;
+    }
+
     if (!edu || !goal || (goal === 'cert' && !cert)) {
-      out.innerHTML = `<p class="empty">${!edu ? '최종학력을' : goal === 'cert' ? '자격증 종류를' : '목표를'} 고르면<br>바로 결과가 나와요.</p>`;
+      const step = !edu ? ['01', '최종학력'] : goal === 'cert' ? ['03', '자격증 종류'] : ['02', '목표'];
+      out.innerHTML = `
+        <p class="lab on-dark">거의 다 됐어요</p>
+        <p class="ex-title">${step[0]} ${step[1]}만 고르면<br>결과가 나와요.</p>`;
       setHidden();
       return;
     }

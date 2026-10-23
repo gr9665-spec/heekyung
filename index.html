@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -62,7 +62,7 @@
     <aside>
       <p class="en serif">Years of one field</p>
       <div class="big">8<small>년</small></div>
-      <p>학점은행제 상담 한 분야만.<br>유튜브 · 인스타그램 · 블로그에서 바뀐 제도와 실제 사례를 정리합니다.</p>
+      <p class="desc">학점은행제 상담 한 분야만.<br>유튜브 · 인스타그램 · 블로그에서 바뀐 제도와 <br>실제 사례를 정리합니다.</p>
       <p class="q" data-needs-reviews data-hero-quote></p>
     </aside>
   </div>
@@ -71,13 +71,15 @@
     <form id="consult-form" novalidate>
       <div class="sheet-head"><b>무료 상담 신청</b><button type="button" data-sheet-close aria-label="닫기">×</button></div>
       <p class="t">무료 상담 신청<small>확인 후 희경쌤이 직접 연락드려요</small></p>
-      <label class="f">이름<input type="text" name="name" required maxlength="20" autocomplete="name" placeholder="이름"></label>
-      <label class="f">연락처<input type="tel" name="phone" required inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000"></label>
-      <label class="f">관심 분야<select name="interest" required>
-        <option value="">선택</option><option>학위</option><option>자격증</option><option>편입</option><option>대학원</option><option>기타</option>
+      <label class="f"><span class="lt">이름</span><input type="text" name="name" required maxlength="20" autocomplete="name" placeholder="이름"></label>
+      <label class="f"><span class="lt">연락처</span><input type="tel" name="phone" required inputmode="numeric" autocomplete="tel" placeholder="연락처 010-0000-0000"></label>
+      <label class="f"><span class="lt">관심 분야</span><select name="interest" required>
+        <option value="">관심 분야 선택</option><option>학위</option><option>자격증</option><option>편입</option><option>대학원</option><option>기타</option>
       </select></label>
-      <label class="agree"><input type="checkbox" name="agree" required> <a href="privacy.html" target="_blank">개인정보 수집·이용</a> 동의</label>
-      <p class="consent">이름·연락처·관심 분야를 상담 연락 목적으로만 쓰고, 상담 종료 후 1년 뒤 파기해요. 동의를 거부할 수 있으며, 이 경우 전화·카카오톡으로 상담하실 수 있어요.</p>
+      <div class="fine-row">
+        <label class="agree"><input type="checkbox" name="agree" required> <a href="privacy.html" target="_blank">개인정보 수집·이용</a>에 동의해요</label>
+        <p class="consent">이름·연락처·관심 분야를 상담 연락 목적으로만 쓰고, 상담 종료 후 1년 뒤 파기해요. 동의를 거부할 수 있으며, 이 경우 전화·카카오톡으로 상담하실 수 있어요.</p>
+      </div>
       <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="diag_edu"><input type="hidden" name="diag_goal"><input type="hidden" name="diag_cert"><input type="hidden" name="diag_result">
       <span class="diag-note" hidden></span>
@@ -89,10 +91,10 @@
 
 <section class="stats" aria-label="희경쌤 요약">
   <div class="wrap">
-    <div><small>상담 경력</small><b>8년</b><em>학점은행제 한 분야</em></div>
-    <div data-needs-reviews><small>공개된 합격 후기</small><b data-review-count></b><em>캡처 원본 그대로</em></div>
-    <div><small>운영 채널</small><b>3곳</b><em>유튜브 · 인스타 · 블로그</em></div>
-    <div><small>상담 분야</small><b>학위·자격·편입</b><em>대학원 진학까지</em></div>
+    <div><span class="k"><em class="serif">Career</em>상담 경력</span><b>8<i>년</i></b><p>학점은행제 한 분야만 상담해 왔어요</p></div>
+    <div data-needs-reviews><span class="k"><em class="serif">Reviews</em>공개된 합격 후기</span><b data-review-count></b><p>캡처 원본 그대로 올려요</p></div>
+    <div><span class="k"><em class="serif">Channels</em>운영 채널</span><b>3<i>곳</i></b><p class="ch"><a href="#" data-channel="youtube">유튜브</a><a href="#" data-channel="instagram">인스타그램</a><a href="#" data-channel="blog">블로그</a></p></div>
+    <div><span class="k"><em class="serif">Focus</em>상담 분야</span><b class="txt">학위 · 자격증<br>편입 · 대학원</b><p>학력별로 가능한 길부터 봐요</p></div>
   </div>
 </section>
 

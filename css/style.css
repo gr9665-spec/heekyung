@@ -75,33 +75,37 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .hero .btns{display:flex;gap:12px;margin-top:38px;flex-wrap:wrap}
 .hero aside{border-left:1px solid rgba(255,255,255,.22);padding-left:40px;align-self:end}
 .hero .en{font-size:20px;color:rgba(255,255,255,.6)}
-.hero .big{font-size:150px;font-weight:800;line-height:.9;letter-spacing:-.06em;margin-top:6px}
+.hero .big{font-size:128px;font-weight:800;line-height:.9;letter-spacing:-.06em;margin-top:6px}
 .hero .big small{font-size:28px;letter-spacing:-.02em;margin-left:6px;font-weight:600}
 .hero aside p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.72);margin-top:18px}
+.hero aside .desc{font-size:17px;line-height:1.75;color:rgba(255,255,255,.88);margin-top:22px}
 .hero .q{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);font-size:16px;line-height:1.7;color:rgba(255,255,255,.85)}
 .hero .q small{display:block;margin-top:6px;color:rgba(255,255,255,.5);font-size:13px}
 
 /* ── 상담바 / 모바일 시트 (같은 폼) ── */
 .consult-bar{position:absolute;inset:auto 0 0 0;z-index:15;background:rgba(10,18,30,.84);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff}
 .consult-bar form{max-width:none;padding:16px var(--gut);display:flex;align-items:center;gap:14px}
-.consult-bar .t{font-size:15px;line-height:1.35;font-weight:700;margin-right:10px;white-space:nowrap}
-.consult-bar .t small{display:block;font-weight:400;opacity:.65;font-size:12px}
-.consult-bar label.f{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.75);white-space:nowrap}
-.consult-bar input[type=text],.consult-bar input[type=tel],.consult-bar select{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);height:44px;border-radius:8px;width:170px;padding:0 12px;font:inherit;font-size:14px;color:#fff}
+.consult-bar .t{font-size:17px;line-height:1.35;font-weight:700;margin-right:12px;white-space:nowrap}
+.consult-bar .t small{display:block;font-weight:400;opacity:.7;font-size:13px;margin-top:2px}
+.consult-bar form{flex-wrap:wrap;row-gap:10px}
+.consult-bar label.f{flex:1 1 0;min-width:0;display:flex}
+.consult-bar label.f .lt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.consult-bar input[type=text],.consult-bar input[type=tel],.consult-bar select{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);height:50px;border-radius:8px;padding:0 16px;font:inherit;font-size:16px;color:#fff}
+.consult-bar select{color:rgba(255,255,255,.85)}
 .consult-bar select option{color:var(--ink)}
-.consult-bar input::placeholder{color:rgba(255,255,255,.45)}
+.consult-bar input::placeholder{color:rgba(255,255,255,.5)}
 .consult-bar input:focus,.consult-bar select:focus{outline:2px solid var(--gold);outline-offset:1px}
-.consult-bar .agree{font-size:12px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px;white-space:nowrap}
-.consult-bar .agree a{text-decoration:underline}
-.consult-bar button[type=submit]{margin-left:auto;background:var(--gold);color:#1a1408;font-weight:700;padding:13px 24px;border-radius:8px;font-size:15px;white-space:nowrap}
+.consult-bar button[type=submit]{background:var(--gold);color:#1a1408;font-weight:700;padding:0 34px;height:50px;border-radius:8px;font-size:16px;white-space:nowrap}
 .consult-bar button[type=submit]:disabled{opacity:.6;cursor:wait}
-.consult-bar form{flex-wrap:wrap}
-.consult-bar label.f{flex:1 1 auto;min-width:0}
-.consult-bar label.f input,.consult-bar label.f select{flex:1 1 120px;min-width:0}
-.consult-bar .diag-note,.consult-bar .form-status{flex-basis:100%;order:99;margin-top:-4px}
+.consult-bar .fine-row{flex-basis:100%;order:98;display:flex;align-items:center;gap:16px}
+.consult-bar .agree{font-size:14px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.consult-bar .agree input{width:16px;height:16px;accent-color:var(--gold)}
+.consult-bar .agree a{text-decoration:underline}
+.consult-bar .consent{font-size:12px;line-height:1.5;color:rgba(255,255,255,.5)}
+.consult-bar .diag-note,.consult-bar .form-status{flex-basis:100%;order:99}
+.consult-bar .form-status{font-size:14px}
 .consult-bar .form-status:empty{display:none}
-.consult-bar .diag-note{font-size:12px;color:var(--gold)}
-.consult-bar .consent{flex-basis:100%;order:98;margin-top:-6px;font-size:11px;line-height:1.5;color:rgba(255,255,255,.5)}
+.consult-bar .diag-note{font-size:13px;color:var(--gold)}
 .consult-bar .sheet-head{display:none}
 .form-status{font-size:13px;min-height:0}
 .form-status.ok{color:#9be3b4}.form-status.error{color:#ffb4a8}
@@ -109,13 +113,19 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .hp{position:absolute;left:-9999px}
 
 /* ── 숫자 띠 ── */
-.stats{border-bottom:1px solid var(--line)}
+.stats{background:var(--paper);border-top:3px solid var(--gold)}
 .stats .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.stats .wrap > div{padding:34px 32px 34px 0;border-right:1px solid var(--line);margin-right:32px}
-.stats .wrap > div:last-child{border-right:0}
-.stats small{font-size:13px;color:var(--muted2);font-weight:500}
-.stats b{display:block;font-size:34px;font-weight:800;letter-spacing:-.04em;margin-top:6px}
-.stats em{font-style:normal;font-size:13px;color:var(--muted2)}
+.stats .wrap > div{padding:40px 28px 40px 0;margin-right:28px;border-right:1px solid #ddd6c6}
+.stats .wrap > div:last-child{border-right:0;margin-right:0}
+.stats .k{display:flex;align-items:baseline;gap:8px;font-size:14px;font-weight:600;color:#4c483f}
+.stats .k em{font-size:19px;color:var(--gold-d)}
+.stats b{display:block;font-size:48px;font-weight:800;letter-spacing:-.05em;line-height:1.1;margin-top:14px}
+.stats b i{font-style:normal;font-size:20px;font-weight:700;margin-left:4px;letter-spacing:-.02em}
+.stats b.txt{font-size:24px;line-height:1.4;letter-spacing:-.04em;margin-top:18px}
+.stats p{font-size:14px;color:var(--muted);margin-top:10px}
+.stats p.ch{display:flex;gap:6px;flex-wrap:wrap}
+.stats p.ch a{font-size:13px;font-weight:600;padding:4px 10px;border:1px solid #d6cfbd;border-radius:999px;background:#fff}
+.stats p.ch a:hover{border-color:var(--ink)}
 
 /* ── 간이 진단 ── */
 .check{background:var(--paper)}
@@ -133,6 +143,13 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .chips input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
 .chips input:focus-visible + span{outline:2px solid var(--gold);outline-offset:2px}
 .check .result{background:var(--ink);color:#fff;padding:40px;display:flex;flex-direction:column}
+.check .result .ex-title{font-size:24px;font-weight:800;letter-spacing:-.04em;line-height:1.4;margin-top:12px}
+.check .examples{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.check .examples button{text-align:left;padding:16px 18px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.04);transition:background .15s,border-color .15s;color:#fff}
+.check .examples button:hover{background:rgba(255,255,255,.09);border-color:var(--gold)}
+.check .examples span{display:block;font-size:16px;font-weight:600;line-height:1.5}
+.check .examples em{display:block;font-style:normal;font-size:13px;color:var(--gold);margin-top:4px}
+.check .ex-hint{margin-top:auto;padding-top:20px;font-size:13px;color:rgba(255,255,255,.5)}
 .check .result .empty{margin:auto 0;color:rgba(255,255,255,.55);font-size:16px;line-height:1.8}
 .check .result .head{font-size:34px;font-weight:800;letter-spacing:-.04em;margin-top:14px}
 .check .result .period{font-size:20px;color:var(--gold);margin-top:6px;font-weight:600}
@@ -201,7 +218,7 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .page-head h1{font-size:44px;font-weight:800;letter-spacing:-.05em;line-height:1.25;margin-top:12px}
 .page-head p{color:rgba(255,255,255,.72);margin-top:14px;font-size:17px;max-width:40em;line-height:1.8}
 .about-grid{display:grid;grid-template-columns:260px 1fr;gap:64px;align-items:start}
-.about-grid .ph{position:sticky;top:110px}
+.about-grid .ph{position:relative}
 .about-grid .ph img{width:100%;height:auto;border-radius:6px;aspect-ratio:4/5;object-fit:cover}
 .about-grid .ph figcaption{margin-top:12px;font-size:13px;color:var(--muted2)}
 .about-grid h2{font-size:30px;font-weight:800;letter-spacing:-.045em;line-height:1.35}
@@ -246,7 +263,6 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 /* ── 태블릿 ── */
 @media (max-width:1180px){
   .consult-bar form{flex-wrap:wrap}
-  .consult-bar input[type=text],.consult-bar input[type=tel],.consult-bar select{width:150px}
   .hero .inner{padding-bottom:240px}
   .top nav ul{gap:24px}
 }
@@ -281,7 +297,9 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
   .hero .lead{font-size:16px}
   .hero .btns .btn{flex:1 1 100%}
   .hero aside{padding-left:20px}
-  .hero .big{font-size:96px}
+  .hero .big{font-size:88px}
+  .hero aside .desc{font-size:16px}
+  .hero aside .desc br:nth-of-type(2){display:none}
   .consult-bar{position:fixed;inset:auto 0 0 0;z-index:50;background:var(--ink);border-radius:18px 18px 0 0;transform:translateY(105%);transition:transform .3s ease;max-height:92vh;overflow:auto;box-shadow:0 -20px 40px rgba(0,0,0,.4)}
   .consult-bar.open{transform:none}
   .sheet-open::after{content:'';position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:45}
@@ -289,12 +307,18 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
   .consult-bar .sheet-head{display:flex;justify-content:space-between;align-items:center}
   .consult-bar .sheet-head button{font-size:28px;line-height:1;color:#fff;padding:4px 8px}
   .consult-bar .t{display:none}
-  .consult-bar label.f{flex-direction:column;align-items:stretch;gap:6px}
+  .consult-bar label.f{flex-direction:column;align-items:stretch;gap:6px;flex:none;font-size:13px;color:rgba(255,255,255,.75)}
+  .consult-bar label.f .lt{position:static;width:auto;height:auto;clip:auto}
+  .consult-bar .fine-row{flex-direction:column;align-items:flex-start;gap:6px;order:0}
+  .consult-bar .agree{white-space:normal}
   .consult-bar input[type=text],.consult-bar input[type=tel],.consult-bar select{width:100%;height:48px;font-size:16px}
-  .consult-bar button[type=submit]{margin:4px 0 0;padding:16px}
+  .consult-bar button[type=submit]{margin:4px 0 0;height:54px}
   .stats .wrap{grid-template-columns:1fr 1fr}
-  .stats .wrap > div{padding:22px 0;margin-right:0;border-right:0;border-bottom:1px solid var(--line)}
-  .stats b{font-size:26px}
+  .stats .wrap > div{padding:24px 0;margin-right:0;border-right:0;border-bottom:1px solid #ddd6c6}
+  .stats .wrap > div:nth-child(odd){padding-right:14px}
+  .stats b{font-size:34px}
+  .stats b.txt{font-size:18px}
+  .stats p{font-size:13px}
   .check .box{grid-template-columns:1fr}
   .check .ask,.check .result{padding:26px 20px}
   .check .result .head{font-size:28px}
