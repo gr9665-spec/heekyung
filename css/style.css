@@ -90,7 +90,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .consult-bar .agree a{text-decoration:underline}
 .consult-bar button[type=submit]{margin-left:auto;background:var(--gold);color:#1a1408;font-weight:700;padding:13px 24px;border-radius:8px;font-size:15px;white-space:nowrap}
 .consult-bar button[type=submit]:disabled{opacity:.6;cursor:wait}
-.consult-bar .diag-note{font-size:12px;color:var(--gold);white-space:nowrap}
+.consult-bar form{flex-wrap:wrap}
+.consult-bar label.f{flex:1 1 auto;min-width:0}
+.consult-bar label.f input,.consult-bar label.f select{flex:1 1 120px;min-width:0}
+.consult-bar .diag-note,.consult-bar .form-status{flex-basis:100%;order:99;margin-top:-4px}
+.consult-bar .form-status:empty{display:none}
+.consult-bar .diag-note{font-size:12px;color:var(--gold)}
 .consult-bar .sheet-head{display:none}
 .form-status{font-size:13px;min-height:0}
 .form-status.ok{color:#9be3b4}.form-status.error{color:#ffb4a8}
