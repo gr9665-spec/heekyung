@@ -161,20 +161,20 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .check .fine{font-size:13px;color:var(--muted2);margin-top:14px}
 
 /* ── 지원 섹션 ── */
-.support .rows{border-top:2px solid var(--ink)}
-.support .row{display:grid;grid-template-columns:60px 1fr 1fr;gap:32px;padding:34px 0;border-bottom:1px solid var(--line);align-items:center}
-.support .no{font-size:14px;font-weight:700;color:var(--gold-d)}
-.support h3{font-size:24px;font-weight:800;letter-spacing:-.04em}
-.support h3 + p{font-size:15px;color:var(--muted);margin-top:4px}
-.support .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
-.support .tags span{font-size:13px;padding:5px 12px;background:var(--paper);border-radius:999px;color:#4c483f}
-.files{background:#fbfaf7;border:1px solid var(--line);border-radius:10px;padding:14px 18px;position:relative}
-.files::before{content:'예시 화면';position:absolute;top:-10px;right:14px;font-size:11px;background:#fff;border:1px solid var(--line);padding:1px 8px;border-radius:999px;color:var(--muted2)}
-.files li{list-style:none;display:flex;align-items:center;gap:10px;padding:8px 0;font-size:14px;border-bottom:1px dashed var(--line)}
+.support{padding:80px 0}
+.support .sec-head{margin-bottom:32px}
+.sup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sup-grid article{border:1px solid var(--line);border-top:3px solid var(--ink);border-radius:4px;padding:24px 24px 20px;display:flex;flex-direction:column;background:#fff}
+.sup-head{display:flex;align-items:baseline;gap:10px}
+.sup-head .no{font-size:14px;font-weight:700;color:var(--gold-d)}
+.sup-grid h3{font-size:19px;font-weight:800;letter-spacing:-.04em}
+.sup-grid article > p{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.6}
+.files{list-style:none;margin-top:16px;background:#fbfaf7;border:1px solid var(--line);border-radius:8px;padding:6px 14px}
+.files li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px dashed var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .files li:last-child{border:0}
-.files i{font-style:normal;font-size:10px;font-weight:800;color:#fff;background:var(--navy);border-radius:4px;padding:3px 5px;min-width:34px;text-align:center}
+.files i{font-style:normal;font-size:10px;font-weight:800;color:#fff;background:var(--navy);border-radius:4px;padding:3px 5px;min-width:34px;text-align:center;flex:none}
 .files i.pdf{background:#c2412d}.files i.hwp{background:#2b6cb0}
-.files em{margin-left:auto;font-style:normal;font-size:12px;color:var(--muted2);white-space:nowrap}
+.sup-note{font-size:12px;color:var(--muted2);margin-top:14px}
 
 /* ── 후기 미리보기 / 후기 페이지 ── */
 .rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
@@ -324,8 +324,9 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
   .check .box{grid-template-columns:1fr}
   .check .ask,.check .result{padding:26px 20px}
   .check .result .head{font-size:28px}
-  .support .row{grid-template-columns:1fr;gap:14px;padding:26px 0}
-  .support .no{display:none}
+  .support{padding:56px 0}
+  .sup-grid{grid-template-columns:1fr;gap:14px}
+  .sup-grid article{padding:20px}
   .news-list{overflow-x:auto;-webkit-mask-image:none;mask-image:none;scroll-snap-type:x mandatory;scrollbar-width:none}
   .news-track{animation:none;gap:12px}
   .news-track .dup{display:none}
