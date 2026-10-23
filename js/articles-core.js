@@ -1,5 +1,5 @@
 // 교육정보 카드 데이터 규칙 (DOM 없음)
-export const sortArticles = list => [...list].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 6);
+export const sortArticles = list => [...list].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 12);
 
 export function validateArticle(a, fileExists) {
   const err = [];

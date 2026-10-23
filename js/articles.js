@@ -14,12 +14,15 @@ export async function initArticles() {
   document.documentElement.classList.toggle('has-articles', items.length > 0);
   const sec = document.getElementById('news');
   if (!sec || !items.length) return;
-  const box = sec.querySelector('.news-list');
-  box.innerHTML = items.map(a => `
-        <a href="${esc(a.url)}" target="_blank" rel="noopener">
-          <img src="${esc(a.thumb)}" alt="" loading="lazy">
-          <div class="tx"><small>${esc(a.category)}</small><h3>${esc(a.title)}</h3><time datetime="${a.date}">${a.date.replaceAll('-', '.')}</time></div>
-        </a>`).join('');
+  // 같은 카드 묶음을 두 번 이어 붙여 끊김 없이 흐르게 한다 (두 번째 묶음은 화면 읽기·탭 이동에서 제외)
+  const card = (a, dup) => `
+    <a href="${esc(a.url)}" target="_blank" rel="noopener"${dup ? ' class="dup" tabindex="-1" aria-hidden="true"' : ''}>
+      <img src="${esc(a.thumb)}" alt="" loading="lazy">
+      <div class="tx"><small>${esc(a.category)}</small><h3>${esc(a.title)}</h3><time datetime="${esc(a.date)}">${esc(a.date.replaceAll('-', '.'))}</time></div>
+    </a>`;
+  const track = sec.querySelector('.news-track');
+  track.innerHTML = items.map(a => card(a, false)).join('') + items.map(a => card(a, true)).join('');
+  track.style.setProperty('--dur', `${items.length * 5}s`);
   const more = sec.querySelector('.to-blog');
   if (CHANNELS.blog) more.querySelector('a').href = CHANNELS.blog;
   else more.hidden = true;

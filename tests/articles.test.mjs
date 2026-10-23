@@ -8,11 +8,11 @@ import { sortArticles, validateArticle } from '../js/articles-core.js';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ok = { title: '제목', category: '자격증', url: 'https://blog.naver.com/x/1', thumb: 'img/articles/1.jpg', date: '2026-10-01' };
 
-test('sortArticles newest first, max 6', () => {
-  const list = Array.from({ length: 7 }, (_, i) => ({ ...ok, date: `2026-10-0${i + 1}` }));
+test('sortArticles newest first, max 12', () => {
+  const list = Array.from({ length: 14 }, (_, i) => ({ ...ok, date: `2026-10-${String(i + 1).padStart(2, '0')}` }));
   const out = sortArticles(list);
-  assert.equal(out.length, 6);
-  assert.equal(out[0].date, '2026-10-07');
+  assert.equal(out.length, 12);
+  assert.equal(out[0].date, '2026-10-14');
 });
 
 test('validateArticle rules', () => {
