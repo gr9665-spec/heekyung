@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizePhone, buildPayload } from '../js/consult-core.js';
+import { normalizePhone, buildPayload, validEmail } from '../js/consult-core.js';
 
 test('normalizePhone accepts common formats', () => {
   assert.equal(normalizePhone('010-1234-5678'), '010-1234-5678');
@@ -43,6 +43,30 @@ test('cert kept when goal is cert', () => {
 test('no diagnosis → empty diag fields', () => {
   const p = buildPayload(base, at);
   for (const k of ['diag_edu', 'diag_goal', 'diag_cert', 'diag_result']) assert.equal(p[k], '');
+});
+
+test('detail form fields pass through, trimmed', () => {
+  const p = buildPayload({ ...base, method: '전화', email: ' a@b.com ', edu: '전문대 졸업', message: '  편입 준비 중이에요 ' }, at);
+  assert.equal(p.method, '전화');
+  assert.equal(p.email, 'a@b.com');
+  assert.equal(p.edu, '전문대 졸업');
+  assert.equal(p.message, '편입 준비 중이에요');
+});
+
+test('quick form leaves detail fields empty', () => {
+  const p = buildPayload(base, at);
+  for (const k of ['method', 'email', 'edu', 'message']) assert.equal(p[k], '');
+});
+
+test('message is capped at 1000 chars', () => {
+  assert.equal(buildPayload({ ...base, message: 'a'.repeat(1500) }, at).message.length, 1000);
+});
+
+test('validEmail: empty allowed, malformed rejected', () => {
+  assert.equal(validEmail(''), true);
+  assert.equal(validEmail('hee@naver.com'), true);
+  assert.equal(validEmail('hee@naver'), false);
+  assert.equal(validEmail('hee naver.com'), false);
 });
 
 test('payload normalizes name, phone and KST time', () => {

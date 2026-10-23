@@ -18,8 +18,14 @@ export function hideMissingChannels(root = document) {
 
 export function openConsult() {
   const bar = document.querySelector('.consult-bar');
+  const detail = document.getElementById('consult-detail');
+  if (!bar && detail) {
+    detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => detail.name.focus({ preventScroll: true }), 400);
+    return;
+  }
   if (!bar) {
-    location.href = 'index.html#apply';
+    location.href = 'contact.html';
     return;
   }
   if (matchMedia('(max-width: 767px)').matches) {

@@ -1,6 +1,6 @@
 // 상담 폼 전송 — EmailJS (정민쌤 사이트 contact.js 흐름과 동일)
 import { EMAILJS, CONTACT } from './config.js';
-import { normalizePhone, buildPayload } from './consult-core.js';
+import { normalizePhone, buildPayload, validEmail } from './consult-core.js';
 
 const SDK = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
 const FALLBACK = `카카오톡 ${CONTACT.kakaoId}로 문의해 주세요.`;
@@ -13,8 +13,8 @@ const loadSdk = () => window.emailjs ? Promise.resolve(window.emailjs) : new Pro
   document.head.append(s);
 });
 
-const form = document.getElementById('consult-form');
-if (form) {
+// 메인 상담바(#consult-form)와 상세 신청 페이지(#consult-detail) 모두 data-consult로 묶는다
+document.querySelectorAll('form[data-consult]').forEach(form => {
   const btn = form.querySelector('button[type="submit"]');
   const label = btn.textContent;
   const status = form.querySelector('.form-status');
@@ -26,7 +26,9 @@ if (form) {
     status.className = `form-status ${type}`.trim();
   };
 
+  const email = form.email;
   phone.addEventListener('input', () => phone.setCustomValidity(''));
+  email?.addEventListener('input', () => email.setCustomValidity(''));
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -34,6 +36,7 @@ if (form) {
     if (form.website.value) return; // 스팸봇
 
     phone.setCustomValidity(normalizePhone(phone.value) ? '' : '휴대폰 번호를 확인해 주세요');
+    email?.setCustomValidity(validEmail(email.value) ? '' : '이메일 주소를 확인해 주세요');
     if (!form.reportValidity()) return;
 
     if (!EMAILJS.publicKey || !EMAILJS.serviceId || !EMAILJS.templateId) {
@@ -52,7 +55,8 @@ if (form) {
       await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, payload, { publicKey: EMAILJS.publicKey });
       setStatus('접수됐어요. 확인 후 희경쌤이 직접 연락드릴게요.', 'ok');
       form.reset();
-      form.querySelector('.diag-note').hidden = true;
+      const note = form.querySelector('.diag-note');
+      if (note) note.hidden = true;
     } catch (err) {
       console.error(err);
       setStatus(`전송에 실패했어요. ${FALLBACK}`, 'error');
@@ -62,4 +66,4 @@ if (form) {
       btn.textContent = label;
     }
   });
-}
+});
