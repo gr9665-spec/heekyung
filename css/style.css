@@ -192,16 +192,13 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 
 /* ── 교육정보 ── */
 .news{background:var(--paper)}
-.news-list{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
-.news-list a{background:#fff;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease}
-.news-list a:hover{transform:translateY(-3px)}
-.news-list img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#ddd}
-.news-list a:first-child{grid-row:span 2}
-.news-list a:first-child img{aspect-ratio:4/3.4}
-.news-list .tx{padding:20px 22px 24px}
+.news-list{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.news-list a{background:#fff;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.news-list a:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(15,26,43,.45)}
+.news-list img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#e9e6df}
+.news-list .tx{padding:18px 20px 22px}
 .news-list small{font-size:12px;color:var(--gold-d);font-weight:700}
-.news-list h3{font-size:18px;line-height:1.45;margin-top:8px;font-weight:700}
-.news-list a:first-child h3{font-size:24px}
+.news-list h3{font-size:17px;line-height:1.5;margin-top:6px;font-weight:700}
 .news-list time{display:block;font-size:12px;color:var(--muted2);margin-top:10px}
 .news .to-blog{margin-top:28px;text-align:right;font-size:14px}
 .news .to-blog a{text-decoration:underline}
@@ -325,9 +322,9 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
   .check .result .head{font-size:28px}
   .support .row{grid-template-columns:1fr;gap:14px;padding:26px 0}
   .support .no{display:none}
-  .news-list{grid-template-columns:1fr}
-  .news-list a:first-child{grid-row:auto}
-  .news-list a:first-child img{aspect-ratio:16/10}
+  .news-list{grid-template-columns:1fr 1fr;gap:12px}
+  .news-list .tx{padding:12px 12px 14px}
+  .news-list h3{font-size:14px}
   .contact .wrap{grid-template-columns:auto 1fr;gap:18px;padding-top:44px;padding-bottom:44px}
   .contact .acts{grid-column:1/-1;flex-direction:column}
   .contact .acts .btn{width:100%}

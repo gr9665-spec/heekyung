@@ -8,10 +8,10 @@ import { sortArticles, validateArticle } from '../js/articles-core.js';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ok = { title: '제목', category: '자격증', url: 'https://blog.naver.com/x/1', thumb: 'img/articles/1.jpg', date: '2026-10-01' };
 
-test('sortArticles newest first, max 5', () => {
+test('sortArticles newest first, max 6', () => {
   const list = Array.from({ length: 7 }, (_, i) => ({ ...ok, date: `2026-10-0${i + 1}` }));
   const out = sortArticles(list);
-  assert.equal(out.length, 5);
+  assert.equal(out.length, 6);
   assert.equal(out[0].date, '2026-10-07');
 });
 
