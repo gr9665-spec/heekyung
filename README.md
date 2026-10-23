@@ -51,3 +51,9 @@ CSS 링크의 `?v=N`을 수정할 때마다 올립니다. JS 모듈은 쿼리 �
 ## 6. 공통 머리말·꼬리말
 
 헤더·퀵메뉴(`<!-- @top -->`)와 푸터·모바일 하단바(`<!-- @bottom -->`)는 `index.html`에서만 고치고 `node tools/sync-layout.mjs`로 다른 페이지에 복사합니다.
+
+## 7. 교육정보 카드 추가
+
+1. 블로그 글 대표 이미지를 `img/articles/`에 내려받아 저장 (네이버 이미지 직접 링크 금지 — 막힐 수 있음).
+2. `data/articles.json`에 한 줄: `{"title":"…","category":"자격증","url":"https://blog.naver.com/…","thumb":"img/articles/파일.jpg","date":"2026-10-20"}`
+3. 최신 5개만 보이고, 0개면 섹션과 메뉴 "교육정보"가 숨겨집니다.
