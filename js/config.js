@@ -7,14 +7,15 @@ export const CONTACT = {
 
 // 주소를 받기 전에는 null → 해당 버튼이 숨겨짐
 export const CHANNELS = {
-  youtube: null,
-  instagram: null,
-  blog: null,
+  youtube: 'https://www.youtube.com/@Heekyoungsam',
+  instagram: 'https://www.instagram.com/hkss4m',
+  blog: 'https://blog.naver.com/edusolution-',
 };
 
-// 희경쌤 EmailJS 계정 값 (비어 있으면 접수 대신 카톡 안내)
+// EmailJS — 에듀솔루션과 같은 계정·서비스, 템플릿만 "희경쌤 사이트" 전용
+// (비어 있으면 접수 대신 카톡 안내)
 export const EMAILJS = {
-  publicKey: '',
-  serviceId: '',
-  templateId: '',
+  publicKey: 'k9jqBez4YeBqYDgzf',
+  serviceId: 'service_i38779r',
+  templateId: 'template_xamljrq',
 };
