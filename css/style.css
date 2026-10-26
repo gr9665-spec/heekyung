@@ -113,15 +113,25 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
 .hp{position:absolute;left:-9999px}
 
 /* ── 숫자 띠 ── */
-.stats{background:var(--paper);border-top:3px solid var(--gold)}
-.stats .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.stats .wrap > div{padding:40px 28px 40px 0;margin-right:28px;border-right:1px solid #ddd6c6}
-.stats .wrap > div:last-child{border-right:0;margin-right:0}
+.stats{background:var(--paper);border-top:3px solid var(--gold);overflow:hidden}
+.stats .intro{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:end;padding-top:28px}
+.intro-ph{align-self:end;margin:0}
+.intro-ph img{width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
+.intro-body{padding:20px 0 40px}
+.intro-name{display:flex;align-items:baseline;gap:12px;padding-bottom:18px;border-bottom:1px solid #ddd6c6}
+.intro-name b{font-size:24px;font-weight:800;letter-spacing:-.04em}
+.intro-name a{margin-left:auto;font-size:14px;font-weight:600;color:var(--gold-d)}
+.intro-name a:hover{text-decoration:underline}
+.intro-stats{display:grid;grid-template-columns:1fr 1.35fr 1fr}
+html.has-reviews .intro-stats{grid-template-columns:1fr 1fr 1.35fr 1fr}
+.intro-stats > div{padding:26px 22px 0 0;margin-right:22px;border-right:1px solid #ddd6c6}
+.intro-stats > div:last-child{border-right:0;margin-right:0}
 .stats .k{display:flex;align-items:baseline;gap:8px;font-size:14px;font-weight:600;color:#4c483f}
 .stats .k em{font-size:19px;color:var(--gold-d)}
-.stats b{display:block;font-size:48px;font-weight:800;letter-spacing:-.05em;line-height:1.1;margin-top:14px}
-.stats b i{font-style:normal;font-size:20px;font-weight:700;margin-left:4px;letter-spacing:-.02em}
-.stats b.txt{font-size:24px;line-height:1.4;letter-spacing:-.04em;margin-top:18px}
+.stats b{display:block;font-size:44px;font-weight:800;letter-spacing:-.05em;line-height:1.1;margin-top:12px}
+.stats b i{font-style:normal;font-size:19px;font-weight:700;margin-left:4px;letter-spacing:-.02em}
+.stats b.txt{font-size:22px;line-height:1.4;letter-spacing:-.04em;margin-top:16px}
+.stats .intro-name b{display:inline;font-size:24px;margin:0;line-height:1.3}
 .stats p{font-size:14px;color:var(--muted);margin-top:10px}
 .stats p.ch{display:flex;gap:6px;flex-wrap:wrap}
 .stats p.ch a{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;padding:4px 11px 4px 8px;border:1px solid #d6cfbd;border-radius:999px;background:#fff;color:var(--ink)}
@@ -315,9 +325,14 @@ html.has-reviews .rv-empty,html:not(.has-reviews) [data-review-page] .filters{di
   .consult-bar .agree{white-space:normal}
   .consult-bar input[type=text],.consult-bar input[type=tel],.consult-bar select{width:100%;height:48px;font-size:16px}
   .consult-bar button[type=submit]{margin:4px 0 0;height:54px}
-  .stats .wrap{grid-template-columns:1fr 1fr}
-  .stats .wrap > div{padding:24px 0;margin-right:0;border-right:0;border-bottom:1px solid #ddd6c6}
-  .stats .wrap > div:nth-child(odd){padding-right:14px}
+  .stats .intro{grid-template-columns:120px 1fr;gap:16px;padding-top:20px}
+  .intro-ph{align-self:start}
+  .intro-body{display:contents}
+  .intro-name{grid-column:2;align-self:center;flex-direction:column;align-items:flex-start;gap:4px;border:0;padding:0}
+  .intro-name a{margin-left:0}
+  .intro-stats{grid-column:1/-1;grid-template-columns:1fr 1fr;border-top:1px solid #ddd6c6;padding-bottom:28px}
+  .intro-stats > div{padding:20px 0 0;margin-right:0;border-right:0}
+  .intro-stats > div:nth-child(odd){padding-right:14px}
   .stats b{font-size:34px}
   .stats b.txt{font-size:18px}
   .stats p{font-size:13px}
