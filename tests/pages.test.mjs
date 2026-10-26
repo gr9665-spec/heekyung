@@ -73,3 +73,16 @@ test('no hotlinked images', () => {
     for (const s of ['images.unsplash.com', 'pstatic.net']) assert.ok(!txt.includes(s), `${f} has ${s}`);
   }
 });
+
+test('index has Organization structured data matching config', async () => {
+  const { CHANNELS, CONTACT } = await import('../js/config.js');
+  const m = read('index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  assert.ok(m, 'JSON-LD missing');
+  const data = JSON.parse(m[1]);
+  const org = data['@graph'].find(n => n['@type'] === 'Organization');
+  assert.equal(org.name, '학점은행제 희경쌤');
+  assert.equal(org.parentOrganization.name, '에듀솔루션');
+  assert.deepEqual([...org.sameAs].sort(), Object.values(CHANNELS).filter(Boolean).sort());
+  assert.equal(org.contactPoint.telephone, '+82-' + CONTACT.phone.slice(1));
+  assert.ok(data['@graph'].some(n => n['@type'] === 'WebSite'));
+});
