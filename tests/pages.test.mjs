@@ -106,3 +106,9 @@ test('custom domain: canonical and og:url use the domain', () => {
     assert.ok(canon.startsWith(DOMAIN), `${p}: ${canon}`);
   }
 });
+
+test('search console ownership tags stay on index', () => {
+  const html = read('index.html');
+  assert.ok(html.includes('<meta name="google-site-verification" content="ErWSUTELPVTW607xtkqFClmPuCUcW-hAL282rELlPug">'));
+  assert.ok(html.includes('<meta name="naver-site-verification" content="81580bfacb19ae912f79e4413edb8ab9f91d5a77">'));
+});
