@@ -58,7 +58,11 @@ document.querySelectorAll('form[data-consult]').forEach(form => {
       const fields = Object.fromEntries(new FormData(form));
       const payload = buildPayload({ ...fields, page: location.pathname });
       const emailjs = await loadSdk();
-      await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, payload, { publicKey: EMAILJS.publicKey });
+      await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, payload, {
+        publicKey: EMAILJS.publicKey,
+        blockHeadless: true,                              // 자동화(헤드리스) 브라우저 차단
+        limitRate: { id: 'hk-consult', throttle: 10000 }, // 같은 브라우저 10초에 1번
+      });
       saveHistory(recordSend(loadHistory()));
       setStatus('접수됐어요. 확인 후 희경쌤이 직접 연락드릴게요.', 'ok');
       form.reset();
