@@ -86,3 +86,23 @@ test('index has Organization structured data matching config', async () => {
   assert.equal(org.contactPoint.telephone, '+82-' + CONTACT.phone.slice(1));
   assert.ok(data['@graph'].some(n => n['@type'] === 'WebSite'));
 });
+
+const DOMAIN = 'https://xn--289aw83be2c0xa0b780jxjaz2k.com/';
+
+test('custom domain: CNAME file', () => {
+  assert.equal(readFileSync(join(root, 'CNAME'), 'utf8').trim(), 'xn--289aw83be2c0xa0b780jxjaz2k.com');
+});
+
+test('custom domain: no old github.io URLs remain', () => {
+  for (const f of [...pages, 'sitemap.xml', 'robots.txt']) {
+    assert.ok(!read(f).includes('gr9665-spec.github.io/heekyung'), f);
+  }
+});
+
+test('custom domain: canonical and og:url use the domain', () => {
+  for (const p of pages.filter(p => p !== 'privacy.html')) {
+    const html = read(p);
+    const canon = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1] ?? '';
+    assert.ok(canon.startsWith(DOMAIN), `${p}: ${canon}`);
+  }
+});
