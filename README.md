@@ -61,3 +61,8 @@ CSS 링크의 `?v=N`을 수정할 때마다 올립니다. JS 모듈은 쿼리 �
 ## 8. 상세 상담 신청 페이지 (`contact.html`)
 
 메인 상담바(간단)와 같은 EmailJS 템플릿으로 보냅니다. 상세 페이지에서만 채워지는 변수: `{{method}}` 희망 상담 방식, `{{email}}`, `{{edu}}` 최종 학력, `{{message}}` 문의 내용. 메인 상담바로 접수하면 이 칸들은 비어서 옵니다.
+
+## 9. 소개 페이지 유튜브 영상
+
+`data/videos.json`에 `{"id":"영상ID","title":"제목"}`을 추가하고, 썸네일을 `img/videos/영상ID.jpg`(640×360)로 저장합니다.
+썸네일은 `https://i.ytimg.com/vi/영상ID/maxresdefault.jpg`에서 받아 줄이고, 제목은 `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=영상ID&format=json`에서 확인합니다. 재생은 youtube-nocookie 주소로 사이트 안 창에서 됩니다.
