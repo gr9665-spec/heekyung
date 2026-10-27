@@ -112,3 +112,10 @@ test('search console ownership tags stay on index', () => {
   assert.ok(html.includes('<meta name="google-site-verification" content="ErWSUTELPVTW607xtkqFClmPuCUcW-hAL282rELlPug">'));
   assert.ok(html.includes('<meta name="naver-site-verification" content="81580bfacb19ae912f79e4413edb8ab9f91d5a77">'));
 });
+
+test('no maker-facing notes visible to learners', () => {
+  for (const p of pages) {
+    const html = read(p);
+    for (const s of ['예시 화면', '마우스를 올리면', '이 화면에서 바로 재생']) assert.ok(!html.includes(s), `${p}: ${s}`);
+  }
+});

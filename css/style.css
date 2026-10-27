@@ -184,7 +184,6 @@ html.has-reviews .intro-stats{grid-template-columns:1fr 1fr 1.35fr 1fr}
 .files li:last-child{border:0}
 .files i{font-style:normal;font-size:10px;font-weight:800;color:#fff;background:var(--navy);border-radius:4px;padding:3px 5px;min-width:34px;text-align:center;flex:none}
 .files i.pdf{background:#c2412d}.files i.hwp{background:#2b6cb0}
-.sup-note{font-size:12px;color:var(--muted2);margin-top:14px}
 
 /* ── 후기 미리보기 / 후기 페이지 ── */
 .rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
@@ -213,7 +212,6 @@ html.has-reviews .intro-stats{grid-template-columns:1fr 1fr 1.35fr 1fr}
 .news-track small{font-size:12px;color:var(--gold-d);font-weight:700}
 .news-track h3{font-size:15px;line-height:1.5;margin-top:4px;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .news-track time{display:block;font-size:12px;color:var(--muted2);margin-top:8px}
-.news-hint{font-size:12px;color:var(--muted2);margin-top:4px}
 .news .to-blog{margin-top:28px;text-align:right;font-size:14px}
 .news .to-blog a{text-decoration:underline}
 
@@ -352,7 +350,6 @@ html.has-reviews .intro-stats{grid-template-columns:1fr 1fr 1.35fr 1fr}
   .news-track .dup{display:none}
   .news-track a{flex-basis:180px;scroll-snap-align:start}
   .news-track h3{font-size:14px}
-  .news-hint{display:none}
   .contact .wrap{grid-template-columns:auto 1fr;gap:18px;padding-top:44px;padding-bottom:44px}
   .contact .acts{grid-column:1/-1;flex-direction:column}
   .contact .acts .btn{width:100%}
