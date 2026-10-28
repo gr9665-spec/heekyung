@@ -119,3 +119,10 @@ test('no maker-facing notes visible to learners', () => {
     for (const s of ['예시 화면', '마우스를 올리면', '이 화면에서 바로 재생']) assert.ok(!html.includes(s), `${p}: ${s}`);
   }
 });
+
+test('every page loads the Google Ads tag and consult sends the conversion', () => {
+  for (const p of pages) assert.ok(read(p).includes('gtag/js?id=AW-16886735349'), p);
+  assert.ok(read('js/consult.js').includes("'conversion'"));
+  assert.ok(read('js/config.js').includes('AW-16886735349/SdHaCNrhkqwdEPXDnPQ-'));
+  assert.ok(read('privacy.html').includes('광고 측정'));
+});

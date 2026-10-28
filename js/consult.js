@@ -1,5 +1,5 @@
 // 상담 폼 전송 — EmailJS (정민쌤 사이트 contact.js 흐름과 동일)
-import { EMAILJS, CONTACT } from './config.js';
+import { EMAILJS, CONTACT, ADS } from './config.js';
 import { normalizePhone, buildPayload, validEmail } from './consult-core.js';
 import { checkLimit, recordSend, loadHistory, saveHistory } from './limit.js';
 
@@ -64,6 +64,8 @@ document.querySelectorAll('form[data-consult]').forEach(form => {
         limitRate: { id: 'hk-consult', throttle: 10000 }, // 같은 브라우저 10초에 1번
       });
       saveHistory(recordSend(loadHistory()));
+      // 광고 전환 (개인정보는 보내지 않음)
+      window.gtag?.('event', 'conversion', { send_to: ADS.conversion, value: 1.0, currency: 'KRW' });
       setStatus('접수됐어요. 확인 후 희경쌤이 직접 연락드릴게요.', 'ok');
       form.reset();
       const note = form.querySelector('.diag-note');

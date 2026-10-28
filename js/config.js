@@ -18,3 +18,8 @@ export const EMAILJS = {
   serviceId: 'service_i38779r',
   templateId: 'template_xamljrq',
 };
+
+// Google 광고 전환 "희경쌤 상담신청" — 접수 성공 시에만 보냄 (태그 본체는 각 페이지 <head>)
+export const ADS = {
+  conversion: 'AW-16886735349/SdHaCNrhkqwdEPXDnPQ-',
+};
