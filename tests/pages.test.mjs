@@ -100,7 +100,7 @@ test('custom domain: no old github.io URLs remain', () => {
 });
 
 test('custom domain: canonical and og:url use the domain', () => {
-  for (const p of pages.filter(p => p !== 'privacy.html')) {
+  for (const p of pages.filter(p => !['privacy.html', '404.html'].includes(p))) {
     const html = read(p);
     const canon = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1] ?? '';
     assert.ok(canon.startsWith(DOMAIN), `${p}: ${canon}`);
@@ -125,4 +125,10 @@ test('every page loads the Google Ads tag and consult sends the conversion', () 
   assert.ok(read('js/consult.js').includes("'conversion'"));
   assert.ok(read('js/config.js').includes('AW-16886735349/SdHaCNrhkqwdEPXDnPQ-'));
   assert.ok(read('privacy.html').includes('광고 측정'));
+});
+
+test('courses has a short FAQ and 404 page links back home', () => {
+  assert.ok((read('courses.html').match(/<details>/g) ?? []).length >= 5);
+  const nf = read('404.html');
+  assert.ok(nf.includes('<base href="/">') && nf.includes('noindex') && nf.includes('href="index.html"'));
 });

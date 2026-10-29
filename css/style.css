@@ -445,3 +445,22 @@ html.has-reviews .intro-stats{grid-template-columns:1fr 1fr 1.35fr 1fr}
   .vthumb i::after{left:12px;top:9px;border-width:7px 0 7px 10px}
   .vmodal{padding:12px}
 }
+
+/* 과정 안내 FAQ */
+.faq{background:var(--paper)}
+.faq-list{border-top:1px solid var(--line)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:22px 4px;font-size:17px;font-weight:700;letter-spacing:-.03em}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:'+';font-weight:400;font-size:22px;line-height:1;color:var(--gold-d);flex:none}
+.faq-list details[open] summary::after{content:'−'}
+.faq-list details p{padding:0 4px 24px;color:var(--muted);line-height:1.8;max-width:46em}
+
+/* 404 */
+.nf{padding:200px 0 140px;text-align:center;min-height:70vh}
+.nf p{margin-left:auto;margin-right:auto}
+.nf .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+@media (max-width:767px){
+  .faq-list summary{font-size:16px;padding:18px 2px}
+  .nf{padding:140px 0 90px}
+}
